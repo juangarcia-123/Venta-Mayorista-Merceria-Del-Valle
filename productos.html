@@ -41,30 +41,48 @@
 
     <section class="products-page">
       <div class="products-header">
-        <h2 class="section-title">Productos</h2>
-        <div class="products-toolbar">
+        <div class="ph-top">
+          <h2 class="section-title" style="margin:0">Productos</h2>
+          <div class="ph-actions">
+            <div class="price-filter" id="priceFilter">
+              <input class="pf-input" id="priceMin" type="number" placeholder="Min $" min="0" />
+              <span class="pf-sep">—</span>
+              <input class="pf-input" id="priceMax" type="number" placeholder="Max $" min="0" />
+              <button class="pf-apply" id="priceApply">OK</button>
+            </div>
+            <div class="view-toggle">
+              <button class="vt-btn active" data-view="grid" aria-label="Vista grilla">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+              </button>
+              <button class="vt-btn" data-view="list" aria-label="Vista lista">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="ph-toolbar">
           <div class="search-wrap">
             <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
             <input class="search-input" id="searchInput" type="text" placeholder="Buscar productos..." autocomplete="off" />
-            <button class="search-clear" id="searchClear" aria-label="Limpiar búsqueda">✕</button>
+            <button class="search-clear" id="searchClear" aria-label="Limpiar">✕</button>
           </div>
-          <div class="sort-wrap">
-            <select class="sort-select" id="sortSelect">
-              <option value="default">Ordenar por</option>
-              <option value="price-asc">Menor precio</option>
-              <option value="price-desc">Mayor precio</option>
-              <option value="name-asc">A-Z</option>
-              <option value="name-desc">Z-A</option>
-            </select>
-          </div>
+          <select class="sort-select" id="sortSelect">
+            <option value="default">Ordenar</option>
+            <option value="price-asc">Menor precio</option>
+            <option value="price-desc">Mayor precio</option>
+            <option value="name-asc">A-Z</option>
+            <option value="name-desc">Z-A</option>
+          </select>
         </div>
-        <p class="products-count" id="resultCount"></p>
+        <div class="ph-meta">
+          <span class="products-count" id="resultCount"></span>
+          <div class="active-filters" id="activeFilters"></div>
+        </div>
       </div>
       <div class="cat-filter-grid" id="filterGrid"></div>
       <div class="product-grid" id="productGrid"></div>
     </section>
 
-    <!-- Quick View Modal -->
     <div class="modal-overlay" id="modalOverlay">
       <div class="modal" id="modal">
         <button class="modal-close" id="modalClose">✕</button>
@@ -95,7 +113,7 @@
     <aside class="cart-sidebar" id="cartSidebar">
       <div class="cart-header">
         <h2>Carrito <span id="cartCountLabel">0</span></h2>
-        <button class="cart-close" id="cartClose" aria-label="Cerrar carrito">✕</button>
+        <button class="cart-close" id="cartClose">✕</button>
       </div>
       <div class="cart-items" id="cartItems">
         <div class="cart-empty">
