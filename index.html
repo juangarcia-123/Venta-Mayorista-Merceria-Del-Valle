@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercería Del Valle — Venta Mayorista</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <a href="/" class="logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="13" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M9 14l3.5 3.5L19 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Mercería <span>Del Valle</span>
+      </a>
+      <nav class="nav">
+        <a href="/">Inicio</a>
+        <div class="nav-item">
+          <button class="nav-link nav-trigger">
+            Categorías
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown" id="navDropdown"></div>
+        </div>
+        <a href="/productos.html">Productos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="header-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Carrito">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-particles" id="particles"></div>
+      <div class="hero-content">
+        <span class="hero-badge">✦ Venta Mayorista</span>
+        <h1>
+          Todo en<br/>
+          <span class="highlight">Mercería</span>
+          <br/>al por Mayor
+        </h1>
+        <p>
+          Herrajes, lencería, cintas navideñas, fantasías, bijou, galonería,
+          lanas, hilos y todo para tu taller o emprendimiento.
+        </p>
+        <div class="hero-actions">
+          <a href="/productos.html" class="btn-primary">
+            Ver Productos
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/productos.html" class="btn-secondary">Ir a la Tienda</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-circle" id="heroCircle">
+          <div class="hero-circle-inner">
+            <span class="hero-icon">🧵</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee-wrap">
+      <div class="marquee">
+        <span><strong>Herrajes</strong> · <strong>Lencería</strong> · <strong>Elásticos</strong> · <strong>Cintas</strong> · <strong>Bijou</strong> · <strong>Galonería</strong> · <strong>Lanas</strong> · <strong>Mochileras</strong> · <strong>Máquinas</strong></span>
+        <span><strong>Herrajes</strong> · <strong>Lencería</strong> · <strong>Elásticos</strong> · <strong>Cintas</strong> · <strong>Bijou</strong> · <strong>Galonería</strong> · <strong>Lanas</strong> · <strong>Mochileras</strong> · <strong>Máquinas</strong></span>
+      </div>
+    </div>
+
+    <section class="showcase" id="destacados">
+      <h2 class="section-title">Destacados</h2>
+      <p class="section-sub">Productos seleccionados con los mejores precios</p>
+      <div class="showcase-grid" id="showcaseGrid"></div>
+      <div style="margin-top:48px">
+        <a href="/productos.html" class="btn-primary">Ver Catálogo Completo →</a>
+      </div>
+    </section>
+
+    <footer class="footer" id="contacto">
+      <p><strong>Mercería Del Valle</strong> — Venta Mayorista</p>
+      <p style="margin-top:8px;font-size:0.8rem;">Herrajes · Acc. Lencería · Elásticos · Tanzas · Cintas Navideñas · Fantasías · Bijou · Galonería · Lanas · Hilos · Mochileras · Máquinas · Adhesivos · Ojales · Tintas</p>
+      <p style="margin-top:12px;font-size:0.75rem;">&copy; 2026 Mercería Del Valle. Todos los derechos reservados.</p>
+    </footer>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h2>Carrito <span id="cartCountLabel">0</span></h2>
+        <button class="cart-close" id="cartClose" aria-label="Cerrar carrito">✕</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <div class="cart-empty">
+          <div class="cart-empty-icon">🛒</div>
+          <p class="cart-empty-text">Tu carrito está vacío</p>
+        </div>
+      </div>
+      <div class="cart-footer" id="cartFooter" style="display:none;">
+        <div class="cart-total">
+          <span class="cart-total-label">Total</span>
+          <span class="cart-total-value" id="cartTotal">$0</span>
+        </div>
+        <button class="checkout-btn">
+          Solicitar Cotización
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </aside>
+
+    <div class="toast" id="toast"></div>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/inicio.js"></script>
+  </body>
+</html>
