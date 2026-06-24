@@ -42,6 +42,22 @@
     <section class="products-page">
       <div class="products-header">
         <h2 class="section-title">Productos</h2>
+        <div class="products-toolbar">
+          <div class="search-wrap">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            <input class="search-input" id="searchInput" type="text" placeholder="Buscar productos..." autocomplete="off" />
+            <button class="search-clear" id="searchClear" aria-label="Limpiar búsqueda">✕</button>
+          </div>
+          <div class="sort-wrap">
+            <select class="sort-select" id="sortSelect">
+              <option value="default">Ordenar por</option>
+              <option value="price-asc">Menor precio</option>
+              <option value="price-desc">Mayor precio</option>
+              <option value="name-asc">A-Z</option>
+              <option value="name-desc">Z-A</option>
+            </select>
+          </div>
+        </div>
         <p class="products-count" id="resultCount"></p>
       </div>
       <div class="cat-filter-grid" id="filterGrid"></div>
